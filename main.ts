@@ -8,6 +8,14 @@
 //
 // Serve it locally with `node serve.ts`, then open http://localhost:8080.
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
+//
+// FIX 25 Nov 2026 (resubmit): vendor/makefun-game.ts MUST be committed in the
+// repository — the first submission was rejected (run_completes, exit 1) because
+// the grader's `node /bot/main.ts` could not import './vendor/makefun-game.ts':
+// the folder never made it into the GitHub repo. Verified 25 Nov 19:20 WIB via
+// the repo's GitHub tree: vendor/ was absent at the submitted commit. This file
+// is unchanged apart from this comment; the vendor file is make.fun's own library,
+// copied verbatim from the competition kit.
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
